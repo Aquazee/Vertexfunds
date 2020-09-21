@@ -4,20 +4,14 @@ import { LineChart, } from "react-native-chart-kit";
 
 class A_LineChart extends Component {
     render() {
+        let { data } = this.props
         return (
             <LineChart
                 data={{
                     labels: ["2015", "2016", "2017", "2018", "2019", "2020"],
                     datasets: [
                         {
-                            data: [
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100
-                            ]
+                            data
                         }
                     ]
                 }}

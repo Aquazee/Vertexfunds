@@ -5,14 +5,6 @@ import { BarChart } from "react-native-chart-kit";
 class BarChartScreen extends React.Component {
     render() {
         let { data } = this.props;
-        data = {
-            labels: ["January", "February", "March", "April", "May", "June"],
-            datasets: [
-                {
-                    data: [20, 45, 28, 80, 99, 43]
-                }
-            ]
-        }
         return (
             <View style={styles.container}>
                 <BarChart

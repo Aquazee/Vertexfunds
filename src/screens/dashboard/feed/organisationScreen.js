@@ -9,7 +9,7 @@ import A_BarChart from "../../../components/charts/A_BarChart";
 class Organisation extends Component {
     static navigationOptions = ({ navigation, route }) => {
         return {
-            title: route.params ? route.params.title : 'Axis Bank',
+            title: route.params ? route.params.name : 'Axis Bank',
             headerStyle: {
                 backgroundColor: "#5927e0",
             },
@@ -31,28 +31,30 @@ class Organisation extends Component {
         }
     };
     render() {
-        return (<ScrollView keyboardShouldPersistTaps="always" showsVerticalScrollIndicator={true}  contentContainerStyle={{ flexGrow:1}}>
+        const item = this.props.route.params;
+        return (<ScrollView keyboardShouldPersistTaps="always" showsVerticalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.content1}>
                 <View style={styles.txt1}>
-                    <Text style={styles.label}>Investment : </Text><Text style={[styles.value, { color: "#e4aa54" }]}>Rs 1220</Text>
+                    <Text style={styles.label}>Investment : </Text>
+                    <Text style={[styles.value, { color: "#e4aa54" }]}>Rs {item.min}</Text>
                 </View>
                 <View style={styles.txt1}>
-                    <Text style={styles.label}>Fund Type : </Text><Text style={styles.value}>Equity</Text>
+                    <Text style={styles.label}>Fund Type : </Text><Text style={styles.value}>{item.category}</Text>
                 </View>
                 <View style={styles.txt1}>
-                    <Text style={styles.label}>Investment Period : </Text><Text style={styles.value}>Short Term</Text>
+                    <Text style={styles.label}>Investment Period : </Text><Text style={styles.value}>{item.periodType}</Text>
                 </View>
                 <View style={styles.txt1}>
-                    <Text style={styles.label}>Risk Level : </Text><Text style={[styles.value, { color:"#0ad722" }]}>Low</Text>
+                    <Text style={styles.label}>Risk Level : </Text><Text style={[styles.value, { color: "#0ad722" }]}>{item.risk}</Text>
                 </View>
             </View>
-            <View style={{paddingHorizontal:10, marginTop:10}}>
-                <Text style={{marginVertical:10, color : "#6e7685", fontSize:16}}>Top Performance</Text>
-                <A_LineChart />
+            <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
+                <Text style={{ marginVertical: 10, color: "#6e7685", fontSize: 16 }}>Top Performance</Text>
+                <A_LineChart data={item.line} />
             </View>
-            <View style={{paddingHorizontal:10, marginTop:10}}>
-                <Text style={{marginVertical:10, color : "#6e7685", fontSize:16}}>Monthly Performance</Text>
-                <A_BarChart />
+            <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
+                <Text style={{ marginVertical: 10, color: "#6e7685", fontSize: 16 }}>Monthly Performance</Text>
+                <A_BarChart data={item.bar} />
             </View>
         </ScrollView>
         )

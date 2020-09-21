@@ -11,7 +11,7 @@ class FeedItem extends Component {
 
     cardPress = () => {
         const { item, navigation } = this.props;
-        navigation.push('Organisation', { title: 'Axis Top Securities' });
+        navigation.push('Organisation', item);
     };
 
     render() {

@@ -86,9 +86,9 @@ class feedScreen extends Component {
                     <Text style={{ alignSelf: "flex-end", color: "#fff", marginRight: 10 }}>View Your Portfolio</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{flexDirection:"row", color:"#fff", alignItems:"center", width:"100%", justifyContent:"space-between", paddingHorizontal: 15, marginTop:10}}>
-                <Text style={{ color: "#66707c", marginVertical: 10,  fontSize: 16, alignSelf:"flex-start" }}>Top Rated Funds</Text>
-                <TouchableWithoutFeedback onPress={() =>this.onPress('SearchScreen')}><Icon type="FontAwesome" name="search" style={{color : "#66707c"}} /></TouchableWithoutFeedback>
+            <View style={{ flexDirection: "row", color: "#fff", alignItems: "center", width: "100%", justifyContent: "space-between", paddingHorizontal: 15, marginTop: 10 }}>
+                <Text style={{ color: "#66707c", marginVertical: 10, fontSize: 16, alignSelf: "flex-start" }}>Top Rated Funds</Text>
+                <TouchableWithoutFeedback onPress={() => this.onPress('SearchScreen')}><Icon type="FontAwesome" name="search" style={{ color: "#66707c" }} /></TouchableWithoutFeedback>
             </View>
         </View>
     )
