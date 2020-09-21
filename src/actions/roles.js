@@ -1,0 +1,2 @@
+export const AUDIENCE = 'AUDIENCE';
+export const ADMINISTRATOR = 'ADMINISTRATOR';
